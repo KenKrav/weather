@@ -2,12 +2,14 @@ $(function() {
   var handleWeatherResponse = function(data) {
     console.log(data);
 
-    // Put your code here to change the "markup" variable. 
+    // Put your code here to change the "markup" variable.
     // Don't change any other code in this file. You will be sad.
-    
-    var markup = "The weather report... " + "will be here when I finish my homework.";
-    
-    
+    // console.log(data.timezone);
+
+    var markup = "The current temperature for " + data.timezone + " is " + data.currently.apparentTemperature + "&deg C " + " with " + data.currently.summary + " skies." + " The three day forecast " + data.currently.time
+        ;
+
+
     // End of your code
 
     $('.weather-report').html(markup);
