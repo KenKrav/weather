@@ -6,8 +6,14 @@ $(function() {
     // Don't change any other code in this file. You will be sad.
     // console.log(data.timezone);
 
-    var markup = "The current temperature for " + data.timezone + " is " + data.currently.apparentTemperature + "&deg C " + " with " + data.currently.summary + " skies." + " The three day forecast " + data.currently.time
-        ;
+// used http://www.timestampgenerator.com to determine that data.daily.data[0] was actually today, so [1] is the info for tomorrow
+
+    var markup = "The current temperature for " + data.timezone + " is " + data.currently.apparentTemperature + "&degF " + " with " +
+    data.currently.summary + " skies." + " Tomorrow the temperature will reach " + data.daily.data[1].apparentTemperatureMax + "&degF "
+    + "with " + data.daily.data[1].summary + " The following day the temperature will be between " + data.daily.data[2].apparentTemperatureMin
+    + "&degF " + " and " + data.daily.data[2].apparentTemperatureMax + "&degF " + "with " + data.daily.data[2].summary +
+    "The temperature three days from now will max out at " + data.daily.data[2].apparentTemperatureMax + "&degF " + "and the forecast is "
+    + data.daily.data[3].summary
 
 
     // End of your code
